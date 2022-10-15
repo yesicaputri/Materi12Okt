@@ -23,12 +23,15 @@ Output: "Halo Abduh, Selamat Datang di Jabar Coding Camp!"
 */
 
 // Code function di sini
-
-
 // Hapus komentar untuk menjalankan code!
-// greetings("Bagas");
-// greetings("Wahyu");
-// greetings("Abdul");
+function greetings($nama) {
+    echo "Halo $nama, Selamat Datang di Jabar Coding Camp!";
+}
+greetings("Bagas");
+print "<br>";
+greetings("Wahyu");
+print "<br>";
+greetings("Abdul");
 
 echo "<br>";
 
@@ -46,13 +49,22 @@ Output: ludba
 */
 
 // Code function di sini 
-
-
+function reverseString($kata1)
+{
+    $panjangkata = strlen($kata1);
+    $tampung = "";
+    for ($a= $panjangkata-1 ; $a >= 0 ; $a--) {
+        $tampung .= $kata1[$a];
+    }
+    echo $tampung;
+}
 // Hapus komentar di bawah ini untuk jalankan Code
-// reverseString("abduh");
-// reverseString("Bootcamp");
-// reverseString("We Are JCC Developers")
-echo "<br>";
+reverseString("abduh");
+print "<br>";
+reverseString("Bootcamp");
+print "<br>";
+reverseString("We Are JCC Developers");
+
 
 echo "<h3>Soal No 3 Palindrome </h3>";
 /* 
@@ -71,12 +83,33 @@ NB: DILARANG menggunakan built-in function PHP seperti strrev() dll. Gunakan loo
 
 
 // Code function di sini
+function reverse($param) {
+    $karakter = strlen($param);
+    $tampung = "";
+
+    for($x= $karakter-1 ; $x >= 0; $x--)
+    {
+    $tampung .= $param[$x];
+    }
+    return $tampung;
+}
+
+function palindrome($param) {
+    $kataAwal = $param;
+    $kataBalik = reverse($param);
+
+    if ($kataAwal == $kataBalik){
+        echo $kataAwal . " - true";
+    } else {
+        echo $kataAwal . " - false";
+    }
+}
 
 // Hapus komentar di bawah ini untuk jalankan code
-// palindrome("civic") ; // true
-// palindrome("nababan") ; // true
-// palindrome("jambaban"); // false
-// palindrome("racecar"); // true
+palindrome("civic") ; // true
+palindrome("nababan") ; // true
+palindrome("jambaban"); // false
+palindrome("racecar"); // true
 
 
 echo "<h3>Soal No 4 Tentukan Nilai </h3>";
@@ -89,12 +122,26 @@ sama dengan 60 dan lebih kecil dari 70 maka akan mereturn string “Cukup” sel
 */
 
 // Code function di sini
+function tentukan_nilai($param){
+    if ($param > 100) {
+        return "Nilai Lebih dari 100";
+    } else if ($param >= 85 && $param <= 100){
+        return $param . " - Sangat Baik" . "<br>";
+    } else if ($param >= 70 and $param < 85) {
+        return $param . " - Baik" . "<br>";
+    } else if ($param >= 60 && $param < 70) {
+        return $param . " - Cukup" . "<br>";
+    } else {
+        return $param . " - Kurang" . "<br>";
+    }
+}
 
 // Hapus komentar di bawah ini untuk jalankan code
-// echo tentukan_nilai(98); //Sangat Baik
-// echo tentukan_nilai(76); //Baik
-// echo tentukan_nilai(67); //Cukup
-// echo tentukan_nilai(43); //Kurang
+echo tentukan_nilai(98); //Sangat Baik
+echo tentukan_nilai(76); //Baik
+echo tentukan_nilai(67); //Cukup
+echo tentukan_nilai(43); //Kurang
+echo tentukan_nilai(100); //Kurang
 
 
 ?>
